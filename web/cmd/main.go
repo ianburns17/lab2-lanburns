@@ -14,6 +14,9 @@ func about(w http.ResponseWriter, r *http.Request) {
 func contact(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("Contact me at:\n email: ianburns344@gmail.com \n phone number: 6259908 "))
 }
+func qoute(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("“The best way to get started is to quit talking and begin doing.” – Walt Disney\n"))
+}
 func main() {
 
 	mux := http.NewServeMux()
@@ -21,7 +24,7 @@ func main() {
 	mux.HandleFunc("/", home)
 	mux.HandleFunc("/about", about)
 	mux.HandleFunc("/contact", contact)
-
+	mux.HandleFunc("/qoute", qoute)
 	log.Print("starting server on :4000")
 	err := http.ListenAndServe(":4000", mux)
 	log.Fatal(err)
