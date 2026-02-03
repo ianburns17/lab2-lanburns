@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"net/http"
+	"lab1-Ianburns/web/cmd/routes"
 )
 
 func home(w http.ResponseWriter, r *http.Request) {
@@ -21,10 +22,8 @@ func main() {
 
 	mux := http.NewServeMux()
 
-	mux.HandleFunc("/", home)
-	mux.HandleFunc("/about", about)
-	mux.HandleFunc("/contact", contact)
-	mux.HandleFunc("/qoute", qoute)
+	mux := routes()
+
 	log.Print("starting server on :4000")
 	err := http.ListenAndServe(":4000", mux)
 	log.Fatal(err)
