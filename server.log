@@ -1,0 +1,4 @@
+nohup: ignoring input
+2026/02/03 10:46:03 starting server on :8080
+2026/02/03 10:46:03 server failed: listen tcp :8080: bind: address already in use
+exit status 1

@@ -1,4 +1,3 @@
-
 package main
 
 import (
@@ -15,9 +14,12 @@ func main() {
 		addr = ":" + port
 	}
 
+	mux := http.NewServeMux()
+	routes.SetupRoutes(mux)
+
 	srv := &http.Server{
 		Addr:    addr,
-		Handler: routes.NewRouter(),
+		Handler: mux,
 	}
 
 	log.Printf("starting server on %s", addr)
