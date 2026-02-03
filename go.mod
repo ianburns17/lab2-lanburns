@@ -1,3 +1,3 @@
-module github.com/ianburns17/lab1-Ianburns
+module github.com/ianburns17/lab2-Ianburns
 
-go 1.25.4
+go 1.20
